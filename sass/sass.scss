@@ -1,0 +1,81 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #fff689;
+$secondary-color: #d6ffb7;
+@mixin HoverColor($color) {
+  &:hover {
+    filter: drop-shadow(20px 20px 10px $color);
+  }
+} 
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  background-color: $primary-color;
+  padding: 50px;
+  text-align: center;
+  border-radius: 0% 0% -90%;
+}
+em {
+  font-weight: 1500rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+  font: 100% $font-stack;
+  background-color: $secondary-color;
+
+  img {
+    width: 150px;
+    height: 150px;
+    padding:0;
+    z-index: 100;
+
+    &[alt="1"]{
+      @include HoverColor(green);
+    }
+    &[alt="2"]{
+      @include HoverColor(blue);
+    }
+    &[alt="3"]{
+      @include HoverColor(red);
+    }
+
+  }
+
+  div.container {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-shrink: 1;
+
+    .invisible {
+      visibility: hidden;
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  height: 35px;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+}
+
