@@ -26,6 +26,7 @@ function Music(event){
     if(!activated[index]){
         activated[index]=true;
         audios[index].play();
+        audios[index].loop=true;
         images[index].classList.toggle("animate__animated");
         images[index+3].style.visibility = "visible";
     }
